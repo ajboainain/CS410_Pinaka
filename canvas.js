@@ -8,19 +8,19 @@ window.addEventListener("load", () => {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 	//functions
-	
+	ctx.fillText('Doctor Smarty Pants: ID: 3921ARD', 10, 10);
 	function startPosition(e){
 		painting = true;
 		draw(e);
 	}
-	
+	ctx.strokeRect(0,0,200,50);
 	function endPosition(){
 		painting = false;
 		ctx.beginPath();
 	}
 	
 	function draw(e){
-		if(!painting) return;
+		if(!painting || (e.clientX<200&&e.clientY<50)) return;
 		ctx.lineWidth = 10;
 		ctx.lineCap = "round";
 		ctx.lineTo(e.clientX, e.clientY);
